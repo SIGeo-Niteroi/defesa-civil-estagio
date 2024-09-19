@@ -7,17 +7,20 @@ async function getDefesaCivilAlert() {
 
     const currentAlert = data['features'][0].attributes.risco
     const date = new Date(data['features'][0].attributes.inicial_risco)
-
+    
     const estagioClass = {
         'Baixo': 'lowAlert',
         'Médio': 'mediumAlert',
         'Alto': 'highAlert',
         'Muito Alto': 'higherAlert'
     }
-    if (currentAlert) {
-        estagioContainer.classList.add(estagioClass[currentAlert.grav])
-        estagioContainer.innerHTML = `<h2><em>Risco de fogo em vegetação:</em></h2> <h1>${currentAlert.grav}</h1><p>Atualizado em ${date.toLocaleDateString()}</p>`
-    }
+
+    return {alert: currentAlert, date}
 }
 
-getDefesaCivilAlert()
+getDefesaCivilAlert().then(data => {
+        if (data) {
+        estagioContainer.classList.add(estagioClass[data.alert.grav])
+        estagioContainer.innerHTML = `<h2><em>Risco de fogo em vegetação:</em></h2> <h1>${data.alert.grav}</h1><p>Atualizado em ${data.date.toLocaleDateString()}</p>`
+    }
+})
