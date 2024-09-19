@@ -4,6 +4,7 @@ async function getDefesaCivilAlert() {
     const apiUrl = import.meta.env.VITE_API_URL
     const response = await fetch(apiUrl)
     const data = await response.json()
+    console.log(data)
 
     const currentAlert = data['features'][0].attribute?.risco
     const date = new Date(data['features'][0].attribute?.inicial_risco)
