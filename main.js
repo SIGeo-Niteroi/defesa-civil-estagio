@@ -15,11 +15,10 @@ async function getDefesaCivilAlert() {
 
     return {alert: currentAlert, date}
 }
-console.log(getDefesaCivilAlert())
 
 getDefesaCivilAlert().then(data => {
         if (data) {
-        estagioContainer.classList.add(estagioClass[data.alert.grav])
-        estagioContainer.innerHTML = `<h2><em>Risco de fogo em vegetação:</em></h2> <h1>${data.alert.grav}</h1><p>Atualizado em ${data.date.toLocaleDateString()}</p>`
+        estagioContainer.classList.add(estagioClass[data.alert])
+        estagioContainer.innerHTML = `<h2><em>Risco de fogo em vegetação:</em></h2> <h1>${data.alert}</h1><p>Atualizado em ${data.date.toLocaleDateString()}</p>`
     }
 })
