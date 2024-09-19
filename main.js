@@ -1,5 +1,10 @@
 const estagioContainer = document.getElementById('container')
-
+const estagioClass = {
+    'Baixo': 'lowAlert',
+    'Médio': 'mediumAlert',
+    'Alto': 'highAlert',
+    'Muito Alto': 'higherAlert'
+}
 async function getDefesaCivilAlert() {
     const apiUrl = import.meta.env.VITE_API_URL
     const response = await fetch(apiUrl)
@@ -7,13 +12,6 @@ async function getDefesaCivilAlert() {
 
     const currentAlert = data['features'][0].attributes.risco
     const date = new Date(data['features'][0].attributes.inicial_risco)
-    
-    const estagioClass = {
-        'Baixo': 'lowAlert',
-        'Médio': 'mediumAlert',
-        'Alto': 'highAlert',
-        'Muito Alto': 'higherAlert'
-    }
 
     return {alert: currentAlert, date}
 }
