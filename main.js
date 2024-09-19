@@ -6,8 +6,8 @@ async function getDefesaCivilAlert() {
     const data = await response.json()
     console.log(data)
 
-    const currentAlert = data['features'][0].attribute?.risco
-    const date = new Date(data['features'][0].attribute?.inicial_risco)
+    const currentAlert = data['features'][0].attribute.risco
+    const date = new Date(data['features'][0].attribute.inicial_risco)
 
     const estagioClass = {
         'Baixo': 'lowAlert',
