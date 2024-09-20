@@ -17,12 +17,12 @@ body {
 .estagio__container h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    font-size: 48px;
+    font-size: 36px;
 }
 .estagio__container h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 18px;
 }
 .estagio__container {
     border-radius: 5px;
