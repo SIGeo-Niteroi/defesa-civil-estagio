@@ -33,7 +33,7 @@ body {
     font-weight: 500;
     font-size: 20px;
     margin-top: 20px;
-    margint-right: 20px;
+    margin-right: 20px;
 }
 .estagio__container.higherAlert {
     background-color: var(--purple-highest);
