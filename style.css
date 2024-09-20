@@ -51,4 +51,9 @@ body {
     background-color: var(--green-low);
     color: var(--green-low-letter);
 }
+@media only screen and (max-width: 600px) {
+    .estagio__container {
+        margin: 0 auto;
+    }
+}
 
